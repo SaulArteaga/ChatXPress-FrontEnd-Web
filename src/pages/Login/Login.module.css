@@ -1,0 +1,105 @@
+h1 {
+  font-size: 80px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 30px;
+  color: black;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90px;
+}
+
+.button1 {
+  background-color: #2f5d95;
+  color: white;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.button1:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.button:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+.button2 {
+  background-color: #0e286a;
+  color: white;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+}
+
+.button2:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
+}
+
+.button2:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 black;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  margin-top: 1rem;
+  border-radius: 30px;
+  outline: 2px solid #5bbaff;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #5bbaff;
+  outline-offset: 3px;
+  padding: 10px 12.5px;
+  transition: all 0.2s ease;
+  width: 250px;
+}
+
+input:hover {
+  background-color: #fff;
+}
+
+input:focus {
+  outline-offset: -6px;
+  background-color: #d6f1ff;
+}
