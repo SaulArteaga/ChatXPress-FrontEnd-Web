@@ -71,15 +71,14 @@ h3 {
   box-shadow: 0 0 0 0 black;
 }
 
-body {
+.mainContainer {
   margin: 0;
   display: flex;
-  align-self: center;
   justify-content: center;
-  place-items: center;
+  align-items: center;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 input {

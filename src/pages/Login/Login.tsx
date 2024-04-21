@@ -35,34 +35,36 @@ function Login() {
   }
 
   return (
-    <div>
-      <h1>Welcome!!</h1>
-      <h3>Introduce your account</h3>
-      <div className={style.inputs}>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={user.username}
-          onChange={handleInputChange}
-          placeholder="username"
-        />
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={user.password}
-          onChange={handleInputChange}
-          placeholder="password"
-        />
-      </div>
-      <div className={style.buttons}>
-        <button className={style.button1} onClick={checkLogin}>
-          Log In
-        </button>
-        <button className={style.button2} onClick={() => setuser(initUser)}>
-          Cancel
-        </button>
+    <div className={style.mainContainer}>
+      <div>
+        <h1>Welcome!!</h1>
+        <h3>Introduce your account</h3>
+        <div className={style.inputs}>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={user.username}
+            onChange={handleInputChange}
+            placeholder="username"
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={user.password}
+            onChange={handleInputChange}
+            placeholder="password"
+          />
+        </div>
+        <div className={style.buttons}>
+          <button className={style.button1} onClick={checkLogin}>
+            Log In
+          </button>
+          <button className={style.button2} onClick={() => setuser(initUser)}>
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );

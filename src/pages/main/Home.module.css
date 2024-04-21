@@ -1,0 +1,47 @@
+.mainContainer {
+  background-color: rgba(0, 0, 0, 0.443);
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  color: white;
+}
+
+.optionContainer {
+  background-color: #5bbbffd3;
+  border: 4px solid #0e286a;
+  width: 280px;
+  height: 780px;
+  border-radius: 40px;
+  padding: 20px;
+  margin: 30px;
+  text-align: center;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  color: white;
+  margin-top: 20px;
+  height: 80px;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+button:hover {
+  border: 2px solid white;
+}
+
+hr {
+  margin-top: 10px;
+  color: white;
+}
+
+h2 {
+  font-family: serif;
+  font-weight: 400;
+}
