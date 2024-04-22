@@ -55,15 +55,6 @@ h2 {
   padding: 10px;
 }
 
-.userInfoContainer {
-  background-color: black;
-  border-radius: 40px;
-  height: 40vh;
-  margin: 15px;
-  padding: 10px;
-  margin-bottom: 30px;
-}
-
 .userDataContainer {
   background-color: #5bbbffd3;
   height: 39.5vh;
@@ -100,4 +91,71 @@ td:first-child {
   padding: 2px 20px 10px 10px;
   border: none;
   border-right: 2px solid white;
+}
+
+.userInfoContainer {
+  /* background-color: black; */
+  border-radius: 40px;
+  height: 40vh;
+  margin: 5px;
+  padding-bottom: 33px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.userInfoSubContainers {
+  height: 340px;
+  width: 1300px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* background-color: yellow; */
+}
+
+.subContainers {
+  background-color: #3a75de;
+  border: 5px solid #0e286a;
+  border-radius: 50px;
+  height: 130px;
+  width: 500px;
+  margin: 10px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.adminUserDropdown {
+  width: 300px;
+  height: 80px;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.usersContainer {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+}
+.usersData {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.usersText {
+  font-size: 30px;
+}
+.usersQuantity {
+  display: flex;
+  background-color: #4f9cd0;
+  border-radius: 80%;
+  font-size: 24px;
+  width: 130px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 50px;
 }
