@@ -5,6 +5,10 @@ import { LiaUserPlusSolid } from "react-icons/lia";
 import { FaCommentDots } from "react-icons/fa6";
 import { FaUser, FaUserCheck } from "react-icons/fa";
 
+/**
+ * This function creates the main page with some mocked data
+ * @returns The main page
+ */
 function Home() {
   return (
     <div className={style.mainContainer}>

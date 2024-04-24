@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*
+    We set up the background image for all the aplication
+  */
   background-image: url("./assets/Fondo.png");
   object-fit: cover;
 }

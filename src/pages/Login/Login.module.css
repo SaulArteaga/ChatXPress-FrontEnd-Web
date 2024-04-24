@@ -1,14 +1,25 @@
+/* 
+Style for the "Welcome!!" text
+*/
 h1 {
   font-size: 80px;
   color: black;
   margin-bottom: 10px;
 }
 
+/*
+Style for the "Introduce your account" text
+*/
+
 h3 {
   font-size: 30px;
   color: black;
 }
 
+/*
+This defines the position of the two inputs 
+that are placed in the login page
+*/
 .inputs {
   display: flex;
   flex-direction: column;
@@ -17,6 +28,10 @@ h3 {
   height: 100px;
 }
 
+/*
+This defines the position of the 
+buttons of the Login page.
+*/
 .buttons {
   display: flex;
   flex-direction: row;
@@ -25,6 +40,9 @@ h3 {
   height: 90px;
 }
 
+/*
+Style for the "Login" button
+*/
 .button1 {
   background-color: #2f5d95;
   color: white;
@@ -38,16 +56,22 @@ h3 {
   box-shadow: 0 0 0 0 black;
 }
 
+/*
+Style for the hover of the Login button
+*/
 .button1:hover {
   transform: translateY(-4px) translateX(-2px);
   box-shadow: 2px 5px 0 0 black;
 }
 
-.button:active {
+.button1:active {
   transform: translateY(2px) translateX(1px);
   box-shadow: 0 0 0 0 black;
 }
 
+/*
+Styles for the "Cancel" button
+*/
 .button2 {
   background-color: #0e286a;
   color: white;
@@ -61,6 +85,9 @@ h3 {
   box-shadow: 0 0 0 0 black;
 }
 
+/*
+Styles for the hover of the "Cancel" Button
+*/
 .button2:hover {
   transform: translateY(-4px) translateX(-2px);
   box-shadow: 2px 5px 0 0 black;
@@ -71,6 +98,10 @@ h3 {
   box-shadow: 0 0 0 0 black;
 }
 
+/*
+Main style for having all the 
+data in the middle of the page.
+*/
 .mainContainer {
   margin: 0;
   display: flex;
@@ -81,6 +112,9 @@ h3 {
   height: 100vh;
 }
 
+/*
+Styles of the two inputs on the page
+*/
 input {
   margin-top: 1rem;
   border-radius: 30px;
@@ -94,10 +128,16 @@ input {
   width: 250px;
 }
 
+/*
+Styles for the hover of the input
+*/
 input:hover {
   background-color: #fff;
 }
 
+/*
+Small animation for when is focused the input
+*/
 input:focus {
   outline-offset: -6px;
   background-color: #d6f1ff;

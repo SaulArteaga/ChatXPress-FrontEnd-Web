@@ -1,3 +1,6 @@
+/*
+  This defines the main container of the page.
+*/
 .mainContainer {
   background-color: rgba(0, 0, 0, 0.443);
   margin: 0;
@@ -6,6 +9,9 @@
   color: white;
 }
 
+/*
+  This defines the option container ubicated on the left of the app.
+*/
 .optionContainer {
   background-color: #5bbbffd3;
   border: 4px solid #0e286a;
@@ -18,12 +24,18 @@
   text-align: center;
 }
 
+/*
+  This defines how the buttons are seen in the option container.
+*/
 .buttonContainer {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
+/*
+  Defines how the buttons are.
+*/
 .buttonOption {
   color: white;
   margin-top: 20px;
@@ -33,20 +45,33 @@
   font-size: 18px;
 }
 
+/*
+  This defines an animation for the buttons
+*/
 button:hover {
   border: 2px solid white;
 }
 
+/*
+  Defines a fine line on the options container
+*/
 hr {
   margin-top: 10px;
   color: white;
 }
 
+/*
+  Defines the style of the h2 inside of the options container
+*/
 h2 {
   font-family: serif;
   font-weight: 400;
 }
 
+/*
+  Defines the flow of the containers containing the four displays 
+  of data of the user and a table with data of the users. 
+*/
 .userMainContainer {
   height: 95vh;
   width: 78vw;
@@ -55,6 +80,10 @@ h2 {
   padding: 10px;
 }
 
+/*
+  Defines the styles for the container of the table for the 
+  user data.
+*/
 .userDataContainer {
   background-color: #5bbbffd3;
   height: 39.5vh;
@@ -66,6 +95,9 @@ h2 {
   border: 4px solid #0e286a;
 }
 
+/******************************************
+      Defines how the table is seen 
+*******************************************/
 table {
   border-collapse: collapse;
   font-family: serif;
@@ -93,8 +125,10 @@ td:first-child {
   border-right: 2px solid white;
 }
 
+/******************************************
+  Defines the four info displays styles
+*******************************************/
 .userInfoContainer {
-  /* background-color: black; */
   border-radius: 40px;
   height: 40vh;
   margin: 5px;
@@ -103,6 +137,9 @@ td:first-child {
   display: flex;
 }
 
+/*
+  Defines how the data is placed inside of the displays 
+*/
 .userInfoSubContainers {
   height: 340px;
   width: 1300px;
@@ -110,7 +147,6 @@ td:first-child {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* background-color: yellow; */
 }
 
 .subContainers {
@@ -124,18 +160,7 @@ td:first-child {
   padding-top: 20px;
 }
 
-.adminUserDropdown {
-  width: 300px;
-  height: 80px;
-  margin-top: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-}
-
 .usersContainer {
-  /* background-color: red; */
   display: flex;
   flex-direction: row;
 }
@@ -158,4 +183,18 @@ td:first-child {
   justify-content: center;
   margin-top: 10px;
   margin-left: 50px;
+}
+
+/*
+  Defines how the dropdown info is displayed 
+  on the screen
+*/
+.adminUserDropdown {
+  width: 300px;
+  height: 80px;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
 }
