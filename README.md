@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# ChatXPress Frontend Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En este repositorio se encuentra ubicado la parte web de la aplicación que llamamos ChatXPress. Este proyecto se se compone por tres proyectos fundamentales, en el que nos ubicamos, que sería el Frontend Web, el Backend y el Frontend Movil.
 
-## Available Scripts
+El proyecto en el que nos encontramos es una aplicación de administración de usuarios con una dependencia del backend.
 
-In the project directory, you can run:
+Los links a los otrs repositorios son los siguientes:
 
-### `npm start`
+- [Frontend Movil](https://github.com/AmandaRaveloCabrera/ChatXPress-frontend.git)
+- [Backend](https://github.com/SaulArteaga/ChatXPress-Backend.git)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalación de librerías
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para el siguiente paso se tendrá que tener instalado node. Más información en [este link](https://nodejs.org/en/download).
 
-### `npm test`
+Para poder ejecutar nuestra aplicación tendremos que primeramente entrar en modo consola a nuestra carpeta de proyecto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dentro de la carpeta de proyecto ejecutaremos el siguiente comando para poder instalar las librerías necesarias:
 
-### `npm run build`
+```shell
+npm i
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Iniciar la aplicación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para iniciar la aplicación ejecutaremos el siguiente comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+npm start
+```
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Con este comando se ejecutará la app y se abrirá automáticamente una ventana de firefox.
