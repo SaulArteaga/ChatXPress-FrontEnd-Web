@@ -1,7 +1,8 @@
 import { useState } from "react";
 import style from "./Login.module.css";
-import { adminUser } from "../../data/data";
+// import { adminUser } from "../../data/data";
 import { useNavigate } from "react-router-dom";
+import loginUser from "../../services/login.user.service";
 
 /**
  * This function creates a Login page with two basic inputs
@@ -13,8 +14,9 @@ function Login() {
    * We made an empty user to use in the useState
    */
   const initUser = {
-    username: "",
+    email: "",
     password: "",
+    nameRole: "admin",
   };
 
   /**
@@ -46,15 +48,20 @@ function Login() {
    * redirected to the main page, if not it shows an alert with a message.
    */
   function checkLogin() {
-    if (
-      user.username === adminUser.name &&
-      user.password === adminUser.password
-    ) {
-      setuser(initUser);
-      navigate("/home");
-    } else {
-      window.alert("Usuario incorrecto");
-    }
+    const fetchData = async () => {
+      console.log("Aqui");
+      const data = await loginUser(user);
+      console.log(data);
+
+      if (data != null) {
+        window.alert("Hola tonoto");
+        setuser(initUser);
+        navigate("/home");
+      } else {
+        window.alert("Usuario incorrecto");
+      }
+    };
+    fetchData();
   }
 
   return (
@@ -65,11 +72,11 @@ function Login() {
         <div className={style.inputs}>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={user.username}
+            id="email"
+            name="email"
+            value={user.email}
             onChange={handleInputChange}
-            placeholder="username"
+            placeholder="email"
           />
           <input
             type="password"
