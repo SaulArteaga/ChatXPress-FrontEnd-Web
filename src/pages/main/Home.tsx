@@ -4,6 +4,7 @@ import style from "./Home.module.css";
 import { LiaUserPlusSolid } from "react-icons/lia";
 import { FaCommentDots } from "react-icons/fa6";
 import { FaUser, FaUserCheck } from "react-icons/fa";
+import OptionContainer from "../../components/optionContainer/OptionContainer";
 
 /**
  * This function creates the main page with some mocked data
@@ -12,7 +13,7 @@ import { FaUser, FaUserCheck } from "react-icons/fa";
 function Home() {
   return (
     <div className={style.mainContainer}>
-      <div className={style.optionContainer}>
+      {/* <div className={style.optionContainer}>
         <h2>ChatXpress </h2>
         <h2>admin dashboard</h2>
         <hr />
@@ -21,7 +22,8 @@ function Home() {
           <button className={style.buttonOption}>Consult Users</button>
           <button className={style.buttonOption}>Create User</button>
         </div>
-      </div>
+      </div> */}
+      <OptionContainer />
       <div className={style.userMainContainer}>
         <div className={style.userInfoContainer}>
           <div className={style.userInfoSubContainers}>

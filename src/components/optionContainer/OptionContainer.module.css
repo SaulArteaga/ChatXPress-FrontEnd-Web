@@ -1,0 +1,32 @@
+/*
+  This defines the option container ubicated on the left of the app.
+*/
+.optionContainer {
+  background-color: #5bbbffd3;
+  border: 4px solid #0e286a;
+  width: 280px;
+  height: 780px;
+  border-radius: 40px;
+  padding: 20px;
+  margin: 15px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+    Defines how the buttons are.
+  */
+.buttonOption {
+  color: white;
+  margin-top: 20px;
+  height: 80px;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
