@@ -1,0 +1,56 @@
+.userInfoContainer {
+  border-radius: 40px;
+  height: 40vh;
+  margin: 5px;
+  padding-bottom: 33px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+/*
+    Defines how the data is placed inside of the displays 
+  */
+.userInfoSubContainers {
+  height: 340px;
+  width: 1300px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.subContainers {
+  background-color: #3a75de;
+  border: 5px solid #0e286a;
+  border-radius: 50px;
+  height: 130px;
+  width: 500px;
+  margin: 10px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+
+.usersContainer {
+  display: flex;
+  flex-direction: row;
+}
+.usersData {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.usersText {
+  font-size: 30px;
+}
+.usersQuantity {
+  display: flex;
+  background-color: #4f9cd0;
+  border-radius: 80%;
+  font-size: 24px;
+  width: 130px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 50px;
+}
