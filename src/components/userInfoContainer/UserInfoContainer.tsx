@@ -1,5 +1,4 @@
 import React from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
 import style from "./UserInfoContainer.module.css";
 import { LiaUserPlusSolid } from "react-icons/lia";
 import { FaCommentDots } from "react-icons/fa6";
@@ -53,9 +52,6 @@ function UserInfoContainer() {
             </div>
           </div>
         </div>
-      </div>
-      <div className={style.adminUserDropdown}>
-        Admin user <IoMdArrowDropdown size={45} />
       </div>
     </div>
   );

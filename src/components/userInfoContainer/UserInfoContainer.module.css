@@ -1,18 +1,9 @@
-.userInfoContainer {
-  border-radius: 40px;
-  height: 40vh;
-  margin: 5px;
-  padding-bottom: 33px;
-  margin-bottom: 30px;
-  display: flex;
-}
-
 /*
     Defines how the data is placed inside of the displays 
   */
 .userInfoSubContainers {
   height: 340px;
-  width: 1300px;
+  width: 1250px;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
