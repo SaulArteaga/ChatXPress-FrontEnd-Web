@@ -3,6 +3,8 @@ import style from "./Login.module.css";
 // import { adminUser } from "../../data/data";
 import { useNavigate } from "react-router-dom";
 import loginUser from "../../services/login.user.service";
+import React from "react";
+import { userLoggedContext } from "../../contexts/isUserLoggedContext";
 
 /**
  * This function creates a Login page with two basic inputs
@@ -10,13 +12,15 @@ import loginUser from "../../services/login.user.service";
  * @returns The Login page
  */
 function Login() {
+  const userData = React.useContext(userLoggedContext);
+
   /**
    * We made an empty user to use in the useState
    */
   const initUser = {
     email: "",
     password: "",
-    nameRole: "admin",
+    nameRole: "user",
   };
 
   /**
@@ -56,6 +60,9 @@ function Login() {
       if (data != null) {
         window.alert("Hola tonoto");
         setuser(initUser);
+        userData.userIsLogged();
+        userData.setUser(data.username);
+        userData.setUserEmail(data.email);
         navigate("/home");
       } else {
         window.alert("Usuario incorrecto");

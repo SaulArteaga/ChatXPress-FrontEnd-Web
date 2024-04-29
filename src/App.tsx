@@ -2,6 +2,7 @@ import React from "react";
 
 import { BrowserRouter } from "react-router-dom";
 import AdminApp from "./components/adminApp/AdminApp";
+import ContextsProvider from "./providers/ContextsProvider";
 
 /**
  * We set up the AdminRoute to use
@@ -11,7 +12,9 @@ import AdminApp from "./components/adminApp/AdminApp";
 function App() {
   return (
     <BrowserRouter>
-      <AdminApp />
+      <ContextsProvider>
+        <AdminApp />
+      </ContextsProvider>
     </BrowserRouter>
   );
 }
