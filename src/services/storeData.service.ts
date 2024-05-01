@@ -5,3 +5,7 @@ export const storeData = async (cookie: string | null) => {
     }
   } catch (error) {}
 };
+
+export const getCookie = async (key: string) => {
+  return await localStorage.getItem(key);
+};
