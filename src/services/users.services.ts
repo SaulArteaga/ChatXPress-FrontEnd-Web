@@ -1,15 +1,15 @@
 import { IUsersResponse } from "../interfaces/IUsersResponse";
 import { getInitRequest } from "./request.service";
 
-const GET_USERS_PATH = "http://localhost:3000/api/v1/users";
+const PATH = "http://localhost:3000/api/v1/";
 
 export const getUsers = async (): Promise<IUsersResponse[]> => {
-  const request: RequestInfo = `${GET_USERS_PATH}`;
+  const request: RequestInfo = `${PATH}users`;
   const response = await fetch(request, getInitRequest());
 
   const data = await response.json();
   const dataUsers: IUsersResponse[] = [];
-  if (dataUsers) {
+  if (data) {
     data.forEach((element: IUsersResponse) => {
       const user: IUsersResponse = {
         _id: "",
@@ -32,6 +32,29 @@ export const getUsers = async (): Promise<IUsersResponse[]> => {
 
       dataUsers.push(user);
     });
+    return dataUsers;
+  }
+  return [];
+};
+
+export const getUserByEmail = async (email: string) => {
+  const request: RequestInfo = `${PATH}user/email/${email}`;
+  const response = await fetch(request, getInitRequest());
+  const data = await response.json();
+  const dataUsers: IUsersResponse[] = [];
+  if (data) {
+    const user = {
+      _id: data._id,
+      department: data.department,
+      email: data.email,
+      idRole: data.idRole,
+      isActive: data.isActive,
+      lastname: data.lastname,
+      name: data.name,
+      password: data.password,
+    };
+
+    dataUsers.push(user);
     return dataUsers;
   }
   return [];
