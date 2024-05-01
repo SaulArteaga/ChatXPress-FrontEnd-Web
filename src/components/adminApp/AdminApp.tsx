@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 import Home from "../../pages/main/Home";
+import FindUser from "../../pages/FindUser/FindUser";
 
 function AdminApp() {
   return (
@@ -12,6 +13,7 @@ function AdminApp() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/findUser" element={<FindUser />} />
     </Routes>
   );
 }
