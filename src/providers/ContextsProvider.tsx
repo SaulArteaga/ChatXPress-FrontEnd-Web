@@ -3,6 +3,8 @@ import {
   isUserLoggedType,
   userLoggedContext,
 } from "../contexts/isUserLoggedContext";
+import { IUsersResponse } from "../interfaces/IUsersResponse";
+import { usersContext, usersType } from "../contexts/usersContext";
 
 type ContextProviderProps = {
   children: JSX.Element | JSX.Element[];
@@ -14,6 +16,7 @@ export function ContextsProvider(props: ContextProviderProps) {
   const [isLogged, setIsLogged] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [users, setUsers] = useState<IUsersResponse[]>([]);
 
   const setUser = (username: string) => setName(username);
   const setUserEmail = (email: string) => setEmail(email);
@@ -28,10 +31,17 @@ export function ContextsProvider(props: ContextProviderProps) {
     name,
   };
 
+  const usersData: usersType = {
+    users,
+    setUsers,
+  };
+
   return (
-    <userLoggedContext.Provider value={userLoggedData}>
-      {children}
-    </userLoggedContext.Provider>
+    <usersContext.Provider value={usersData}>
+      <userLoggedContext.Provider value={userLoggedData}>
+        {children}
+      </userLoggedContext.Provider>
+    </usersContext.Provider>
   );
 }
 

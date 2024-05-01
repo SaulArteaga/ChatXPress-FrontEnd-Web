@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { IUsersResponse } from "../../interfaces/IUsersResponse";
+import React, { useEffect } from "react";
 import { getUsers } from "../../services/users.services";
+import { usersContext } from "../../contexts/usersContext";
 
 function DataContainerRenderBody() {
-  const [users, setusers] = useState<IUsersResponse[]>([]);
+  const { users, setUsers } = React.useContext(usersContext);
 
   useEffect(() => {
     async function retrieveUsers() {
       try {
         const data = await getUsers();
-        setusers(data);
+        setUsers(data);
       } catch (error) {}
     }
     retrieveUsers();
-  }, []);
+  }, [setUsers, users]);
 
   return (
     users && (
