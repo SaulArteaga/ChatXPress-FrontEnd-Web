@@ -1,19 +1,8 @@
-import React, { useEffect } from "react";
-import { getUsers } from "../../services/users.services";
+import React from "react";
 import { usersContext } from "../../contexts/usersContext";
 
 function DataContainerRenderBody() {
-  const { users, setUsers } = React.useContext(usersContext);
-
-  useEffect(() => {
-    async function retrieveUsers() {
-      try {
-        const data = await getUsers();
-        setUsers(data);
-      } catch (error) {}
-    }
-    retrieveUsers();
-  }, [setUsers, users]);
+  const { users } = React.useContext(usersContext);
 
   return (
     users && (
@@ -26,9 +15,9 @@ function DataContainerRenderBody() {
           <th>Email</th>
           <th></th>
         </tr>
-        {users.map((user) => (
+        {users.map((user, index) => (
           <tr>
-            <td>#1</td>
+            <td># {index + 1}</td>
             <td>{user.name}</td>
             <td>{user._id}</td>
             <td>{user.department}</td>
