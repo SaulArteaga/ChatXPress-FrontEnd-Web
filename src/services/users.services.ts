@@ -1,11 +1,13 @@
 import { IUsersResponse } from "../interfaces/IUsersResponse";
 import { getInitRequest } from "./request.service";
+import { getCookie } from "./storeData.service";
 
 const PATH = "http://localhost:3000/api/v1/";
 
 export const getUsers = async (): Promise<IUsersResponse[]> => {
   const request: RequestInfo = `${PATH}users`;
-  const response = await fetch(request, getInitRequest());
+  const token = await getCookie("JWT");
+  const response = await fetch(request, getInitRequest(token!));
 
   const data = await response.json();
   const dataUsers: IUsersResponse[] = [];
@@ -38,7 +40,7 @@ export const getUsers = async (): Promise<IUsersResponse[]> => {
 };
 
 export const getUserByEmail = async (email: string) => {
-  const request: RequestInfo = `${PATH}user/email/${email}`;
+  const request: RequestInfo = `${PATH}user/${email}`;
   const response = await fetch(request, getInitRequest());
   const data = await response.json();
   const dataUsers: IUsersResponse[] = [];

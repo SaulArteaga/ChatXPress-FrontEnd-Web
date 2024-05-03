@@ -1,4 +1,15 @@
-export const getInitRequest = (): RequestInit => {
+export const getInitRequest = (token: string = ""): RequestInit => {
+  if (token !== "") {
+    return {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    };
+  }
+
   return {
     method: "GET",
     headers: {
@@ -13,6 +24,7 @@ export const postInitRequest = (body?: object): RequestInit => {
     return {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),

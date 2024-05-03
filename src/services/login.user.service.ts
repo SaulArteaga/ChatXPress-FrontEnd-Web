@@ -12,8 +12,9 @@ const loginUser = async (
   const response = await fetch(request, postInitRequest(user));
 
   if (response.status === 200) {
-    await storeData(response.headers.get("Set-Cookie"));
     const jsonResponse: IUserLoginResponse = await response.json();
+    await storeData(jsonResponse.token);
+    console.log(jsonResponse);
     return jsonResponse;
   }
   return null;
