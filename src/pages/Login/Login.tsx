@@ -53,9 +53,7 @@ function Login() {
    */
   function checkLogin() {
     const fetchData = async () => {
-      console.log("Aqui");
       const data = await loginUser(user);
-      console.log(data);
 
       if (data != null) {
         window.alert("Hola tonoto");

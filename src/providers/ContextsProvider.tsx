@@ -5,6 +5,11 @@ import {
 } from "../contexts/isUserLoggedContext";
 import { IUsersResponse } from "../interfaces/IUsersResponse";
 import { usersContext, usersType } from "../contexts/usersContext";
+import { isVisibleContext, isVisibleType } from "../contexts/isVisibleContext";
+import {
+  currentUserDataContext,
+  currentUserDataType,
+} from "../contexts/currentUserDataContext";
 
 type ContextProviderProps = {
   children: JSX.Element | JSX.Element[];
@@ -17,6 +22,9 @@ export function ContextsProvider(props: ContextProviderProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [users, setUsers] = useState<IUsersResponse[]>([]);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const [currentUser, setCurrentUser] = useState<IUsersResponse>();
 
   const setUser = (username: string) => setName(username);
   const setUserEmail = (email: string) => setEmail(email);
@@ -31,17 +39,30 @@ export function ContextsProvider(props: ContextProviderProps) {
     name,
   };
 
+  const currentUserData: currentUserDataType = {
+    currentUser,
+    setCurrentUser,
+  };
+
   const usersData: usersType = {
     users,
     setUsers,
   };
+  const isVisibleData: isVisibleType = {
+    isVisible,
+    setIsVisible,
+  };
 
   return (
-    <usersContext.Provider value={usersData}>
-      <userLoggedContext.Provider value={userLoggedData}>
-        {children}
-      </userLoggedContext.Provider>
-    </usersContext.Provider>
+    <currentUserDataContext.Provider value={currentUserData}>
+      <isVisibleContext.Provider value={isVisibleData}>
+        <usersContext.Provider value={usersData}>
+          <userLoggedContext.Provider value={userLoggedData}>
+            {children}
+          </userLoggedContext.Provider>
+        </usersContext.Provider>
+      </isVisibleContext.Provider>
+    </currentUserDataContext.Provider>
   );
 }
 

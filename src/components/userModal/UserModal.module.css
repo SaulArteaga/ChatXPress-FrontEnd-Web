@@ -1,0 +1,145 @@
+.modalContainer {
+  background-color: rgba(25, 25, 25, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #0095ff;
+  border: 5px solid #0e286a;
+  border-radius: 50px;
+  height: 70vh;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.closeButton {
+  top: 0;
+}
+
+.headerModal {
+  /* background-color: blueviolet; */
+  height: 10vh;
+  margin-left: 5vw;
+  padding-top: 10px;
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.exitButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1vw;
+}
+
+.dataModal {
+  /* background-color: red; */
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 5vh;
+}
+
+.buttonsModal {
+  /* background-color: yellow; */
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.labelsModal {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5vw;
+}
+
+label {
+  margin-top: 1.6rem;
+  padding: 10px 12.5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.inputData {
+  width: 400px;
+  margin-top: 3vh;
+}
+
+.updateButton {
+  background-color: #0e286a;
+  color: white;
+  font-size: 18px;
+  border: 3px solid #67d6ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12vw;
+  height: 4vh;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 black;
+  transition: all 0.3s ease-in-out;
+}
+
+.updateButton:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 #0e286a;
+}
+
+.updateButton:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 #0e286a;
+}
+
+.cancelButton {
+  background-color: #720000;
+  color: white;
+  font-size: 18px;
+  border: 3px solid #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12vw;
+  height: 4vh;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 black;
+  transition: all 0.3s ease-in-out;
+}
+
+.cancelButton:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 #0e286a;
+}
+
+.cancelButton:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 #0e286a;
+}
+.closeButton {
+  margin-right: 15px;
+  transition: transform 0.5s ease;
+}
+.closeButton:hover {
+  transform: rotate(90deg);
+}

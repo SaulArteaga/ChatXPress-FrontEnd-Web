@@ -1,8 +1,18 @@
 import React from "react";
 import { usersContext } from "../../contexts/usersContext";
+import { isVisibleContext } from "../../contexts/isVisibleContext";
+import { IUsersResponse } from "../../interfaces/IUsersResponse";
+import { currentUserDataContext } from "../../contexts/currentUserDataContext";
 
 function DataContainerRenderBody() {
   const { users } = React.useContext(usersContext);
+  const { isVisible, setIsVisible } = React.useContext(isVisibleContext);
+  const { setCurrentUser } = React.useContext(currentUserDataContext);
+
+  const handleVisibleChange = (user: IUsersResponse) => {
+    setCurrentUser(user);
+    setIsVisible(!isVisible);
+  };
 
   return (
     users && (
@@ -23,7 +33,7 @@ function DataContainerRenderBody() {
             <td>{user.department}</td>
             <td>{user.email}</td>
             <td>
-              <button>P</button>
+              <button onClick={() => handleVisibleChange(user)}>P</button>
             </td>
           </tr>
         ))}
