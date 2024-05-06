@@ -4,7 +4,10 @@ import { isVisibleContext } from "../../contexts/isVisibleContext";
 import { currentUserDataContext } from "../../contexts/currentUserDataContext";
 import { HiOutlineX } from "react-icons/hi";
 import { IUsersRequest } from "../../interfaces/IUsersRequest";
-import { modifyUserByEmail } from "../../services/users.services";
+import {
+  deleteUserByEmail,
+  modifyUserByEmail,
+} from "../../services/users.services";
 
 function UserModal() {
   const { currentUser } = React.useContext(currentUserDataContext);
@@ -24,6 +27,10 @@ function UserModal() {
 
   const handleUpdateUser = async () => {
     await modifyUserByEmail(userModified, currentUser?.email!);
+  };
+
+  const handleDeleteUser = async () => {
+    await deleteUserByEmail(currentUser?.email!);
   };
 
   const handleInputChange = (e: any) => {
@@ -103,7 +110,9 @@ function UserModal() {
           <button className={styles.updateButton} onClick={handleUpdateUser}>
             Update
           </button>
-          <button className={styles.cancelButton}>Delete</button>
+          <button className={styles.cancelButton} onClick={handleDeleteUser}>
+            Delete
+          </button>
         </div>
       </div>
     </div>

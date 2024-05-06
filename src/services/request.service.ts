@@ -60,3 +60,24 @@ export const putInitRequest = (body?: object, token = ""): RequestInit => {
     },
   };
 };
+
+export const deleteInitRequest = (token = ""): RequestInit => {
+  if (token !== "") {
+    return {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    };
+  }
+
+  return {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  };
+};

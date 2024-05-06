@@ -1,6 +1,10 @@
 import { IUsersRequest } from "../interfaces/IUsersRequest";
 import { IUsersResponse } from "../interfaces/IUsersResponse";
-import { getInitRequest, putInitRequest } from "./request.service";
+import {
+  deleteInitRequest,
+  getInitRequest,
+  putInitRequest,
+} from "./request.service";
 import { getCookie } from "./storeData.service";
 
 const PATH = "http://localhost:3000/api/v1/";
@@ -66,8 +70,13 @@ export const getUserByEmail = async (email: string) => {
 export const modifyUserByEmail = async (user: IUsersRequest, email: string) => {
   const request: RequestInfo = `${PATH}user/${email}`;
   const token = await getCookie("JWT");
-  console.log(email);
   const response = await fetch(request, putInitRequest(user, token!));
-  console.log(response);
+  return response.status === 200;
+};
+
+export const deleteUserByEmail = async (email: string) => {
+  const request: RequestInfo = `${PATH}user/${email}`;
+  const token = await getCookie("JWT");
+  const response = await fetch(request, deleteInitRequest(token!));
   return response.status === 200;
 };
