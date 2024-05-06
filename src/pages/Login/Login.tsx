@@ -20,7 +20,7 @@ function Login() {
   const initUser = {
     email: "",
     password: "",
-    nameRole: "user",
+    nameRole: "admin",
   };
 
   /**
