@@ -23,11 +23,7 @@ function UserModal() {
   };
 
   const handleUpdateUser = async () => {
-    // console.log(currentUser?.email);
-    console.log("user", userModified);
-    console.log(currentUser?.email);
-    const data = await modifyUserByEmail(userModified, "uno@algo.com");
-    console.log(data);
+    await modifyUserByEmail(userModified, currentUser?.email!);
   };
 
   const handleInputChange = (e: any) => {
