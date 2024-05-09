@@ -2,6 +2,7 @@
   This defines the main container of the page.
 */
 .mainContainer {
+  background-color: rgba(0, 0, 0, 0.443);
   margin: 0;
   display: flex;
   height: 100vh;
