@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./CreateUserContainer.module.css";
+import { IUsersRequest } from "../../interfaces/IUsersRequest";
+import { createUser } from "../../services/users.services";
+import { useNavigate } from "react-router";
 
 function CreateUserContainer() {
+  const navigate = useNavigate();
+
+  const [userModified, setUserModified] = useState<IUsersRequest>({});
+
+  const handleInputChange = (e: any) => {
+    setUserModified({
+      ...userModified,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const createUserHandler = async () => {
+    console.log(userModified);
+    await createUser(userModified);
+    navigate("/home");
+  };
+
   return (
     <div className={style.createUserContainer}>
       <div className={style.modalContainer}>
@@ -24,36 +44,40 @@ function CreateUserContainer() {
                 id="name"
                 name="name"
                 className={style.inputData}
-                onChange={() => console.log("a")}
+                onChange={handleInputChange}
+                value={userModified.name}
               ></input>
               <input
+                id="lastname"
+                name="lastname"
                 className={style.inputData}
-                onChange={() => console.log("a")}
-                readOnly
+                onChange={handleInputChange}
+                value={userModified.lastname}
               ></input>
               <input
                 id="email"
                 name="email"
                 className={style.inputData}
-                onChange={() => console.log("a")}
+                value={userModified.email}
+                onChange={handleInputChange}
               ></input>
               <input
                 id="department"
                 name="department"
                 className={style.inputData}
-                onChange={() => console.log("a")}
+                value={userModified.department}
+                onChange={handleInputChange}
               ></input>
               <input
                 className={style.inputData}
-                onChange={() => console.log("a")}
+                name="password"
+                value={userModified.password}
+                onChange={handleInputChange}
               ></input>
             </div>
           </div>
           <div className={style.buttonsModal}>
-            <button
-              className={style.createButton}
-              onChange={() => console.log("a")}
-            >
+            <button className={style.createButton} onClick={createUserHandler}>
               Create
             </button>
           </div>

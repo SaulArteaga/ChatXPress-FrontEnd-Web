@@ -4,6 +4,7 @@ import {
   deleteInitRequest,
   getInitRequest,
   putInitRequest,
+  createUserInitRequest,
 } from "./request.service";
 import { getCookie } from "./storeData.service";
 
@@ -78,5 +79,13 @@ export const deleteUserByEmail = async (email: string) => {
   const request: RequestInfo = `${PATH}user/${email}`;
   const token = await getCookie("JWT");
   const response = await fetch(request, deleteInitRequest(token!));
+  return response.status === 200;
+};
+
+export const createUser = async (user: IUsersRequest) => {
+  console.log(user);
+  const request: RequestInfo = `${PATH}user`;
+  const token = await getCookie("JWT");
+  const response = await fetch(request, createUserInitRequest(user, token!));
   return response.status === 200;
 };

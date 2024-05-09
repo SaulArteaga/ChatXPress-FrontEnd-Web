@@ -81,3 +81,28 @@ export const deleteInitRequest = (token = ""): RequestInit => {
     },
   };
 };
+
+export const createUserInitRequest = (
+  body?: object,
+  token = ""
+): RequestInit => {
+  if (token !== "") {
+    return {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify(body),
+    };
+  }
+
+  return {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  };
+};
