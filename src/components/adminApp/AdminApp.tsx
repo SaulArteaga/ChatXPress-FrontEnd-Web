@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../../pages/Login/Login";
 import Home from "../../pages/main/Home";
 import FindUser from "../../pages/FindUser/FindUser";
+import CreateUser from "../../pages/CreateUser/CreateUser";
 
 function AdminApp() {
   return (
@@ -14,6 +15,7 @@ function AdminApp() {
       <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/findUser" element={<FindUser />} />
+      <Route path="/createUser" element={<CreateUser />} />
     </Routes>
   );
 }

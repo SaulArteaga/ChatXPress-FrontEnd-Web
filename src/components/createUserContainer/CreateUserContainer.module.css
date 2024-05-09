@@ -1,0 +1,117 @@
+.createUserContainer {
+  height: 80vh;
+  width: 65vw;
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer {
+  height: 100vh;
+  width: 65vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: #0095ff;
+  border: 5px solid #0e286a;
+  border-radius: 50px;
+  margin-top: 10vh;
+  height: 70vh;
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeButton {
+  top: 0;
+}
+
+.headerModal {
+  height: 10vh;
+  padding-top: 10px;
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.exitButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1vw;
+}
+
+.dataModal {
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 5vh;
+}
+
+.buttonsModal {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.labelsModal {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5vw;
+}
+
+label {
+  margin-top: 1.6rem;
+  padding: 10px 12.5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.inputData {
+  width: 400px;
+  margin-top: 3vh;
+}
+
+.createButton {
+  background-color: #0e286a;
+  color: white;
+  font-size: 18px;
+  border: 3px solid #67d6ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12vw;
+  height: 4vh;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 black;
+  transition: all 0.3s ease-in-out;
+}
+
+.createButton:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 #0e286a;
+}
+
+.createButton:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 0 0 0 0 #0e286a;
+}

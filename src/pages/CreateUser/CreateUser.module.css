@@ -1,0 +1,56 @@
+/*
+  This defines the main container of the page.
+*/
+.mainContainer {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  color: white;
+}
+
+/*
+      This defines an animation for the buttons
+    */
+button:hover {
+  border: 2px solid white;
+}
+
+/*
+      Defines a fine line on the options container
+    */
+hr {
+  margin-top: 10px;
+  color: white;
+}
+
+/*
+      Defines the style of the h2 inside of the options container
+    */
+h2 {
+  font-family: serif;
+  font-weight: 400;
+}
+
+/*
+      Defines the flow of the containers containing the four displays 
+      of data of the user and a table with data of the users. 
+    */
+.createUserMainContainer {
+  height: 95vh;
+  width: 78vw;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/******************************************
+      Defines the four info displays styles
+    *******************************************/
+.createUserInfoContainer {
+  border-radius: 40px;
+  height: 95vh;
+  margin: 5px;
+  padding-bottom: 33px;
+  margin-bottom: 30px;
+  display: flex;
+}
