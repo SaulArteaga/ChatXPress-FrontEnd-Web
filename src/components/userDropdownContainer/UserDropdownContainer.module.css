@@ -17,7 +17,9 @@
 }
 
 .infoUser {
+  margin-top: 1.5vh;
   display: flex;
+  align-content: center;
   flex-direction: row;
   align-items: center;
 }
@@ -29,7 +31,7 @@
 }
 
 .dropdown {
-  /* background-color: red; */
+  /* background-color: red;s */
   height: 8vh;
   width: 11vw;
 }
@@ -37,8 +39,8 @@
 .dropdown .content {
   background-color: #2f5d95;
   border: 5px solid #0e286a;
-  margin-top: 8px;
-  height: 6vh;
+  margin-top: 1vh;
+  height: 4vh;
   border-radius: 50px;
   display: none;
   position: absolute;
