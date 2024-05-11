@@ -3,6 +3,7 @@ import { usersContext } from "../../contexts/usersContext";
 import { isVisibleContext } from "../../contexts/isVisibleContext";
 import { IUsersResponse } from "../../interfaces/IUsersResponse";
 import { currentUserDataContext } from "../../contexts/currentUserDataContext";
+import { FaRegEdit } from "react-icons/fa";
 
 function DataContainerRenderBody() {
   const { users } = React.useContext(usersContext);
@@ -33,7 +34,7 @@ function DataContainerRenderBody() {
             <td>{user.department}</td>
             <td>{user.email}</td>
             <td>
-              <button onClick={() => handleVisibleChange(user)}>P</button>
+              <FaRegEdit onClick={() => handleVisibleChange(user)} size={18} />
             </td>
           </tr>
         ))}
