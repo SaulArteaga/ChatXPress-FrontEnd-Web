@@ -12,8 +12,8 @@ function LogoutButtonComponent() {
   };
 
   return (
-    <div className={style.adminUserDropdown}>
-      <div className={style.infoUser} onClick={handleLogout}>
+    <div className={style.logoutDropdown}>
+      <div className={style.logoutUser} onClick={handleLogout}>
         <p>Exit</p> <IoMdExit size={30} />
       </div>
     </div>
