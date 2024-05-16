@@ -3,7 +3,7 @@ import style from "./Home.module.css";
 import OptionContainer from "../../components/optionContainer/OptionContainer";
 import UserInfoContainer from "../../components/userInfoContainer/UserInfoContainer";
 import UserDataContainer from "../../components/userDataContainer/UserDataContainer";
-import UserDropdownContainer from "../../components/userDropdownContainer/UserDropdownContainer";
+import LogoutButtonComponent from "../../components/userDropdownContainer/LogoutButton";
 import { getUsers } from "../../services/users.services";
 import { usersContext } from "../../contexts/usersContext";
 
@@ -12,17 +12,15 @@ import { usersContext } from "../../contexts/usersContext";
  * @returns The main page
  */
 function Home() {
-  const { users, setUsers } = React.useContext(usersContext);
+  const { setUsers } = React.useContext(usersContext);
 
   useEffect(() => {
     async function retrieveUsers() {
-      try {
-        const data = await getUsers();
-        setUsers(data);
-      } catch (error) {}
+      const data = await getUsers();
+      setUsers(data);
     }
     retrieveUsers();
-  }, [setUsers, users]);
+  }, []);
 
   return (
     <div className={style.mainContainer}>
@@ -30,7 +28,7 @@ function Home() {
       <div className={style.userMainContainer}>
         <div className={style.userInfoContainer}>
           <UserInfoContainer />
-          <UserDropdownContainer />
+          <LogoutButtonComponent />
         </div>
         <UserDataContainer />
       </div>

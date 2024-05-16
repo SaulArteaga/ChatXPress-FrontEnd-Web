@@ -1,0 +1,30 @@
+/*
+  Defines how the dropdown info is displayed 
+  on the screen
+*/
+.adminUserDropdown {
+  background-color: #2f5d95;
+  border: 5px solid #0e286a;
+  border-radius: 50px;
+  width: 8vw;
+  height: 60px;
+  margin-top: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 25px;
+}
+
+.infoUser {
+  /* background-color: red; */
+  width: 5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.adminUserDropdown:hover {
+  background-color: red;
+}

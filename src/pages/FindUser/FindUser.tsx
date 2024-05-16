@@ -2,7 +2,7 @@ import React from "react";
 import style from "./FindUser.module.css";
 import OptionContainer from "../../components/optionContainer/OptionContainer";
 import UserDataContainer from "../../components/userDataContainer/UserDataContainer";
-import UserDropdownContainer from "../../components/userDropdownContainer/UserDropdownContainer";
+import UserDropdownContainer from "../../components/userDropdownContainer/LogoutButton";
 import FindUserContainer from "../../components/findUser/FindUserContainer";
 import UserModal from "../../components/userModal/UserModal";
 import { isVisibleContext } from "../../contexts/isVisibleContext";

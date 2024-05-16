@@ -1,6 +1,6 @@
 import React from "react";
 import OptionContainer from "../../components/optionContainer/OptionContainer";
-import UserDropdownContainer from "../../components/userDropdownContainer/UserDropdownContainer";
+import UserDropdownContainer from "../../components/userDropdownContainer/LogoutButton";
 import style from "./CreateUser.module.css";
 import CreateUserContainer from "../../components/createUserContainer/CreateUserContainer";
 function CreateUser() {
