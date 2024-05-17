@@ -3,7 +3,7 @@ import { IUserLoginResponse } from "../interfaces/IUserLoginResponse";
 import { postInitRequest } from "./request.service";
 import { storeData } from "./storeData.service";
 
-const LOGIN_PATH = "http://172.16.100.207:3000/api/v1/user/login";
+const LOGIN_PATH = "http://localhost:3000/api/v1/user/login";
 
 const loginUser = async (
   user: IUserLoginRequest

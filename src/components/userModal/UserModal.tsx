@@ -8,6 +8,7 @@ import {
   deleteUserByEmail,
   modifyUserByEmail,
 } from "../../services/users.services";
+import { useNavigate } from "react-router-dom";
 
 function UserModal() {
   const { currentUser } = React.useContext(currentUserDataContext);
@@ -16,21 +17,31 @@ function UserModal() {
     lastname: currentUser?.lastname,
     email: currentUser?.email,
     department: currentUser?.department,
-    password: currentUser?.password,
+    password: "",
   };
   const { isVisible, setIsVisible } = React.useContext(isVisibleContext);
   const [userModified, setUserModified] = useState(userToChange);
+
+  const navigate = useNavigate();
 
   const handleVisibleChange = () => {
     setIsVisible(!isVisible);
   };
 
   const handleUpdateUser = async () => {
-    await modifyUserByEmail(userModified, currentUser?.email!);
+    const update = await modifyUserByEmail(userModified, currentUser?.email!);
+    if (update) {
+      handleVisibleChange();
+      navigate("/home");
+    }
   };
 
   const handleDeleteUser = async () => {
-    await deleteUserByEmail(currentUser?.email!);
+    const deleteUser = await deleteUserByEmail(currentUser?.email!);
+    if (deleteUser) {
+      handleVisibleChange();
+      navigate("/home");
+    }
   };
 
   const handleInputChange = (e: any) => {
@@ -60,7 +71,6 @@ function UserModal() {
           <div className={styles.labelsModal}>
             <label>Name</label>
             <label>Surname</label>
-            <label>ID</label>
             <label>Email</label>
             <label>Department</label>
             <label>Password</label>
@@ -81,12 +91,6 @@ function UserModal() {
               value={userModified?.lastname}
             ></input>
             <input
-              className={styles.inputData}
-              onChange={handleInputChange}
-              // value={currentUser?._id}
-              readOnly
-            ></input>
-            <input
               id="email"
               name="email"
               className={styles.inputData}
@@ -101,6 +105,8 @@ function UserModal() {
               value={userModified?.department}
             ></input>
             <input
+              id="password"
+              name="password"
               className={styles.inputData}
               onChange={handleInputChange}
             ></input>

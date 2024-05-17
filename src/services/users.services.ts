@@ -8,7 +8,7 @@ import {
 } from "./request.service";
 import { getCookie } from "./storeData.service";
 
-const PATH = "http://172.16.100.207:3000/api/v1/";
+const PATH = "http://localhost:3000/api/v1/";
 
 export const getUsers = async (): Promise<IUsersResponse[]> => {
   const request: RequestInfo = `${PATH}users`;
