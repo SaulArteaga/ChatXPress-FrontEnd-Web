@@ -1,3 +1,4 @@
+import { ITotalActiveUsersResponse } from "../interfaces/ITotalActiveUsersResponse";
 import { ITotalUsersResponse } from "../interfaces/ITotalUsersResponse";
 import { IUsersRequest } from "../interfaces/IUsersRequest";
 import { IUsersResponse } from "../interfaces/IUsersResponse";
@@ -91,8 +92,20 @@ export const createUser = async (user: IUsersRequest) => {
   return response.status === 200;
 };
 
-export const getActiveUsers = async (): Promise<ITotalUsersResponse> => {
+export const getActiveUsers = async (): Promise<ITotalActiveUsersResponse> => {
   const request: RequestInfo = `${PATH}users/active`;
+  const token = await getCookie("JWT");
+  const response = await fetch(request, getInitRequest(token!));
+
+  const data = await response.json();
+  if (data) {
+    return data;
+  }
+  return {} as ITotalActiveUsersResponse;
+};
+
+export const getTotalUsers = async (): Promise<ITotalUsersResponse> => {
+  const request: RequestInfo = `${PATH}users/total`;
   const token = await getCookie("JWT");
   const response = await fetch(request, getInitRequest(token!));
 

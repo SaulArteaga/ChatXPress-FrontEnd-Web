@@ -1,3 +1,3 @@
 export interface ITotalUsersResponse {
-  activeUsers: number;
+  totalUsers: number;
 }

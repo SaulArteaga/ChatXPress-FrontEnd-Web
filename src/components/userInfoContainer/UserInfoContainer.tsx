@@ -3,19 +3,28 @@ import style from "./UserInfoContainer.module.css";
 import { LiaUserPlusSolid } from "react-icons/lia";
 import { FaCommentDots } from "react-icons/fa6";
 import { FaUser, FaUserCheck } from "react-icons/fa";
-import { getActiveUsers } from "../../services/users.services";
+import { getActiveUsers, getTotalUsers } from "../../services/users.services";
+import { ITotalActiveUsersResponse } from "../../interfaces/ITotalActiveUsersResponse";
 import { ITotalUsersResponse } from "../../interfaces/ITotalUsersResponse";
 
 function UserInfoContainer() {
-  const [totalActiveUsers, setTotalActiveUsers] = useState<ITotalUsersResponse>(
+  const [totalActiveUsers, setTotalActiveUsers] =
+    useState<ITotalActiveUsersResponse>({} as ITotalActiveUsersResponse);
+  const [totalUsers, setTotalUsers] = useState<ITotalUsersResponse>(
     {} as ITotalUsersResponse
   );
+
   useEffect(() => {
-    async function getTotalUsers() {
+    async function getTotalActiveUsers() {
       const total = await getActiveUsers();
       setTotalActiveUsers({ activeUsers: total.activeUsers });
     }
-    getTotalUsers();
+    async function getAllUsers() {
+      const total = await getTotalUsers();
+      setTotalUsers({ totalUsers: total.totalUsers });
+    }
+    getAllUsers();
+    getTotalActiveUsers();
   }, []);
   return (
     <div className={style.userInfoContainer}>
@@ -48,7 +57,7 @@ function UserInfoContainer() {
           <div className={style.usersContainer}>
             <div className={style.usersData}>
               <h4 className={style.usersText}>Total Users</h4>
-              <h4 className={style.usersQuantity}>todo</h4>
+              <h4 className={style.usersQuantity}>{totalUsers.totalUsers}</h4>
             </div>
             <div>
               <FaUser size={90} style={{ color: "white" }} />
