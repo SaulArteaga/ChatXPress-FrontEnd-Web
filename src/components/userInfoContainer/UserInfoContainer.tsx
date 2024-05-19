@@ -6,6 +6,8 @@ import { FaUser, FaUserCheck } from "react-icons/fa";
 import { getActiveUsers, getTotalUsers } from "../../services/users.services";
 import { ITotalActiveUsersResponse } from "../../interfaces/ITotalActiveUsersResponse";
 import { ITotalUsersResponse } from "../../interfaces/ITotalUsersResponse";
+import { ITotalActiveChatsResponse } from "../../interfaces/ITotalActiveChatsResponse";
+import { getTotalActiveChats } from "../../services/chats.services";
 
 function UserInfoContainer() {
   const [totalActiveUsers, setTotalActiveUsers] =
@@ -13,6 +15,8 @@ function UserInfoContainer() {
   const [totalUsers, setTotalUsers] = useState<ITotalUsersResponse>(
     {} as ITotalUsersResponse
   );
+  const [totalActiveChats, setTotalActiveChats] =
+    useState<ITotalActiveChatsResponse>({} as ITotalActiveChatsResponse);
 
   useEffect(() => {
     async function getTotalActiveUsers() {
@@ -23,6 +27,11 @@ function UserInfoContainer() {
       const total = await getTotalUsers();
       setTotalUsers({ totalUsers: total.totalUsers });
     }
+    async function getTotalChats() {
+      const totalChat = await getTotalActiveChats();
+      setTotalActiveChats({ chatsActive: totalChat.chatsActive });
+    }
+    getTotalChats();
     getAllUsers();
     getTotalActiveUsers();
   }, []);
@@ -68,7 +77,9 @@ function UserInfoContainer() {
           <div className={style.usersContainer}>
             <div className={style.usersData}>
               <h4 className={style.usersText}>Total Chats</h4>
-              <h4 className={style.usersQuantity}>Todo</h4>
+              <h4 className={style.usersQuantity}>
+                {totalActiveChats.chatsActive}
+              </h4>
             </div>
             <div>
               <FaUserCheck size={90} style={{ color: "white" }} />
