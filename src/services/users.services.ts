@@ -1,3 +1,4 @@
+import { ITotalUsersResponse } from "../interfaces/ITotalUsersResponse";
 import { IUsersRequest } from "../interfaces/IUsersRequest";
 import { IUsersResponse } from "../interfaces/IUsersResponse";
 import {
@@ -88,4 +89,16 @@ export const createUser = async (user: IUsersRequest) => {
   const token = await getCookie("JWT");
   const response = await fetch(request, createUserInitRequest(user, token!));
   return response.status === 200;
+};
+
+export const getActiveUsers = async (): Promise<ITotalUsersResponse> => {
+  const request: RequestInfo = `${PATH}users/active`;
+  const token = await getCookie("JWT");
+  const response = await fetch(request, getInitRequest(token!));
+
+  const data = await response.json();
+  if (data) {
+    return data;
+  }
+  return {} as ITotalUsersResponse;
 };
