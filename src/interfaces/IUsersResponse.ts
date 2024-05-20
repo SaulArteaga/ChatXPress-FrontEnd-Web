@@ -1,3 +1,6 @@
+/**
+ * This interface is used to set up the server response data.
+ */
 export interface IUsersResponse {
   _id: string;
   department: string;
