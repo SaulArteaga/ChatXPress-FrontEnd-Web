@@ -6,6 +6,8 @@ import UserDataContainer from "../../components/userDataContainer/UserDataContai
 import LogoutButtonComponent from "../../components/userDropdownContainer/LogoutButton";
 import { getUsers } from "../../services/users.services";
 import { usersContext } from "../../contexts/usersContext";
+import UserModal from "../../components/userModal/UserModal";
+import { isVisibleContext } from "../../contexts/isVisibleContext";
 
 /**
  * This function creates the main page with some mocked data
@@ -22,8 +24,11 @@ function Home() {
     retrieveUsers();
   }, []);
 
+  const { isVisible } = React.useContext(isVisibleContext);
+
   return (
     <div className={style.mainContainer}>
+      {isVisible ? <UserModal /> : null}
       <OptionContainer />
       <div className={style.userMainContainer}>
         <div className={style.userInfoContainer}>
