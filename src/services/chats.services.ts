@@ -1,4 +1,5 @@
 import { ITotalActiveChatsResponse } from "../interfaces/ITotalActiveChatsResponse";
+import { ITotalMessagesResponse } from "../interfaces/ITotalMessagesResponse";
 import { getInitRequest } from "./request.service";
 import { getCookie } from "./storeData.service";
 
@@ -16,3 +17,15 @@ export const getTotalActiveChats =
     }
     return {} as ITotalActiveChatsResponse;
   };
+
+export const getTotalMessages = async (): Promise<ITotalMessagesResponse> => {
+  const request: RequestInfo = `${PATH}message/total`;
+  const token = await getCookie("JWT");
+  const response = await fetch(request, getInitRequest(token!));
+
+  const data = await response.json();
+  if (data) {
+    return data;
+  }
+  return {} as ITotalMessagesResponse;
+};

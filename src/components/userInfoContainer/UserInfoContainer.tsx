@@ -7,7 +7,11 @@ import { getActiveUsers, getTotalUsers } from "../../services/users.services";
 import { ITotalActiveUsersResponse } from "../../interfaces/ITotalActiveUsersResponse";
 import { ITotalUsersResponse } from "../../interfaces/ITotalUsersResponse";
 import { ITotalActiveChatsResponse } from "../../interfaces/ITotalActiveChatsResponse";
-import { getTotalActiveChats } from "../../services/chats.services";
+import {
+  getTotalActiveChats,
+  getTotalMessages,
+} from "../../services/chats.services";
+import { ITotalMessagesResponse } from "../../interfaces/ITotalMessagesResponse";
 
 function UserInfoContainer() {
   const [totalActiveUsers, setTotalActiveUsers] =
@@ -17,6 +21,10 @@ function UserInfoContainer() {
   );
   const [totalActiveChats, setTotalActiveChats] =
     useState<ITotalActiveChatsResponse>({} as ITotalActiveChatsResponse);
+
+  const [totalMessageCount, setTotalMessageCount] = useState(
+    {} as ITotalMessagesResponse
+  );
 
   useEffect(() => {
     async function getTotalActiveUsers() {
@@ -31,6 +39,11 @@ function UserInfoContainer() {
       const totalChat = await getTotalActiveChats();
       setTotalActiveChats({ chatsActive: totalChat.chatsActive });
     }
+    async function getTotalMessagesCount() {
+      const totalMessages = await getTotalMessages();
+      setTotalMessageCount(totalMessages);
+    }
+    getTotalMessagesCount();
     getTotalChats();
     getAllUsers();
     getTotalActiveUsers();
@@ -55,7 +68,9 @@ function UserInfoContainer() {
           <div className={style.usersContainer}>
             <div className={style.usersData}>
               <h4 className={style.usersText}>All Messages</h4>
-              <h4 className={style.usersQuantity}>Todo</h4>
+              <h4 className={style.usersQuantity}>
+                {totalMessageCount.totalMessage}
+              </h4>
             </div>
             <div>
               <FaCommentDots size={90} style={{ color: "white" }} />
