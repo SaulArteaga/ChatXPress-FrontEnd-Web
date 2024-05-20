@@ -14,7 +14,7 @@ import { isVisibleContext } from "../../contexts/isVisibleContext";
  * @returns The main page
  */
 function Home() {
-  const { setUsers } = React.useContext(usersContext);
+  const { users, setUsers } = React.useContext(usersContext);
 
   useEffect(() => {
     async function retrieveUsers() {
@@ -22,7 +22,7 @@ function Home() {
       setUsers(data);
     }
     retrieveUsers();
-  }, []);
+  }, [setUsers, users]);
 
   const { isVisible } = React.useContext(isVisibleContext);
 

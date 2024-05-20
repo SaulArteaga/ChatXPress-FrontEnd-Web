@@ -12,6 +12,7 @@ function FindUserContainer() {
     const data = await getUserByEmail(email);
     console.log(data);
     setUsers(data);
+    setEmail("");
   };
 
   const handleInputChange = (e: any) => {
