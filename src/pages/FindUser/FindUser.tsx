@@ -8,8 +8,8 @@ import UserModal from "../../components/userModal/UserModal";
 import { isVisibleContext } from "../../contexts/isVisibleContext";
 
 /**
- * This function creates the main page with some mocked data
- * @returns The main page
+ * This function creates the FindUser page with the needed modules.
+ * @returns FindUser page
  */
 function FindUser() {
   const { isVisible } = React.useContext(isVisibleContext);
