@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * This context is used to store the data of the logged user.
+ */
 type isUserLoggedType = {
   isLogged: boolean;
   userIsLogged: Function;
