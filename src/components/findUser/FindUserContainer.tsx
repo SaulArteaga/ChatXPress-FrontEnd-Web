@@ -4,10 +4,19 @@ import { getUserByEmail } from "../../services/users.services";
 import React from "react";
 import { usersContext } from "../../contexts/usersContext";
 
+/**
+ * This function checks the email and sets up the array of users with
+ * only the user with the email. If it is not in the db, it sets up an empty array.
+ * @returns The container to find the user
+ */
 function FindUserContainer() {
   const [email, setEmail] = useState("");
   const { setUsers } = React.useContext(usersContext);
 
+  /**
+   * This function finds the user by the given email and stores it in the
+   * context users, then sets the email to empty string.
+   */
   const findUser = async () => {
     const data = await getUserByEmail(email);
     console.log(data);

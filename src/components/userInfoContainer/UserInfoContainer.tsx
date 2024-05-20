@@ -13,12 +13,18 @@ import {
 } from "../../services/chats.services";
 import { ITotalMessagesResponse } from "../../interfaces/ITotalMessagesResponse";
 
+/**
+ * This function returns the info container with some stats
+ * @returns Returns the info container with some stats
+ */
 function UserInfoContainer() {
   const [totalActiveUsers, setTotalActiveUsers] =
     useState<ITotalActiveUsersResponse>({} as ITotalActiveUsersResponse);
+
   const [totalUsers, setTotalUsers] = useState<ITotalUsersResponse>(
     {} as ITotalUsersResponse
   );
+
   const [totalActiveChats, setTotalActiveChats] =
     useState<ITotalActiveChatsResponse>({} as ITotalActiveChatsResponse);
 
@@ -26,6 +32,9 @@ function UserInfoContainer() {
     {} as ITotalMessagesResponse
   );
 
+  /**
+   * This useEffect gets all the needed data for the stats.
+   */
   useEffect(() => {
     async function getTotalActiveUsers() {
       const total = await getActiveUsers();

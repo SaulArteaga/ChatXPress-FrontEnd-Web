@@ -5,6 +5,11 @@ import Home from "../../pages/main/Home";
 import FindUser from "../../pages/FindUser/FindUser";
 import CreateUser from "../../pages/CreateUser/CreateUser";
 
+/**
+ * This function creates the routes of the app and returns them to be used
+ * by the navigator.
+ * @returns The routes of the app
+ */
 function AdminApp() {
   return (
     /**

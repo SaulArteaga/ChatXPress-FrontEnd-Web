@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import style from "./OptionContainer.module.css";
 
+/**
+ * This function creates an option container with
+ * the pages that you can visit
+ * @returns The option container
+ */
 function OptionContainer() {
   const navigate = useNavigate();
 

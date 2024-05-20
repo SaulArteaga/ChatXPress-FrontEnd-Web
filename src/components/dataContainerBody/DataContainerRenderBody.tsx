@@ -5,6 +5,11 @@ import { IUsersResponse } from "../../interfaces/IUsersResponse";
 import { currentUserDataContext } from "../../contexts/currentUserDataContext";
 import { FaRegEdit } from "react-icons/fa";
 
+/**
+ * This fucntion returns the data of the users straight
+ * from the database into a table.
+ * @returns The list of users into a table
+ */
 function DataContainerRenderBody() {
   const { users } = React.useContext(usersContext);
   const { isVisible, setIsVisible } = React.useContext(isVisibleContext);
@@ -27,7 +32,7 @@ function DataContainerRenderBody() {
           <th></th>
         </tr>
         {users.map((user, index) => (
-          <tr>
+          <tr key={index}>
             <td># {index + 1}</td>
             <td>{user.name}</td>
             <td>{user._id}</td>

@@ -4,6 +4,10 @@ import { IUsersRequest } from "../../interfaces/IUsersRequest";
 import { createUser } from "../../services/users.services";
 import { useNavigate } from "react-router";
 
+/**
+ * This function sets up a page to create a new user into the database.
+ * @returns The create user container
+ */
 function CreateUserContainer() {
   const navigate = useNavigate();
 

@@ -10,6 +10,11 @@ import {
 } from "../../services/users.services";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * This function creates a modal for update and
+ * delete the users on the database
+ * @returns The modal for delete and update
+ */
 function UserModal() {
   const { currentUser } = React.useContext(currentUserDataContext);
   const userToChange: IUsersRequest = {
