@@ -8,13 +8,17 @@ import {
   putInitRequest,
   createUserInitRequest,
 } from "./request.service";
-import { getCookie } from "./storeData.service";
+import { getToken } from "./storeData.service";
 
 const PATH = "http://localhost:3000/api/v1/";
 
+/**
+ * This function retrieves all users from the database with the token.
+ * @returns An array of IUsersResponse
+ */
 export const getUsers = async (): Promise<IUsersResponse[]> => {
   const request: RequestInfo = `${PATH}users`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
 
   const data = await response.json();
@@ -47,9 +51,15 @@ export const getUsers = async (): Promise<IUsersResponse[]> => {
   return [];
 };
 
+/**
+ * This function searchs for an user on the database and stores
+ * it on a variable to send it.
+ * @param email
+ * @returns An array of IUsersResponse with one user
+ */
 export const getUserByEmail = async (email: string) => {
   const request: RequestInfo = `${PATH}user/${email}`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
   const data = await response.json();
   const dataUsers: IUsersResponse[] = [];
@@ -71,31 +81,51 @@ export const getUserByEmail = async (email: string) => {
   return [];
 };
 
+/**
+ * This function modifies an user from the database using its mail.
+ * @param user
+ * @param email
+ * @returns A boolean depending if the status is correct
+ */
 export const modifyUserByEmail = async (user: IUsersRequest, email: string) => {
   const request: RequestInfo = `${PATH}user/${email}`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, putInitRequest(user, token!));
   return response.status === 200;
 };
 
+/**
+ * This function deletes an user from the database using its mail.
+ * @param email
+ * @returns A boolean depending if the status is correct
+ */
 export const deleteUserByEmail = async (email: string) => {
   const request: RequestInfo = `${PATH}user/${email}`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, deleteInitRequest(token!));
   return response.status === 200;
 };
 
+/**
+ * This function creates an user using the data passed with the token.
+ * @param user
+ * @returns A boolean depending if the status is correct
+ */
 export const createUser = async (user: IUsersRequest) => {
   console.log(user);
   const request: RequestInfo = `${PATH}user`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, createUserInitRequest(user, token!));
   return response.status === 200;
 };
 
+/**
+ * This function gets a count of all active users on the database.
+ * @returns An object with the count of all the active users.
+ */
 export const getActiveUsers = async (): Promise<ITotalActiveUsersResponse> => {
   const request: RequestInfo = `${PATH}users/active`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
 
   const data = await response.json();
@@ -105,9 +135,13 @@ export const getActiveUsers = async (): Promise<ITotalActiveUsersResponse> => {
   return {} as ITotalActiveUsersResponse;
 };
 
+/**
+ * This function gets a count of all users in the database.
+ * @returns An object with the count of all users.
+ */
 export const getTotalUsers = async (): Promise<ITotalUsersResponse> => {
   const request: RequestInfo = `${PATH}users/total`;
-  const token = await getCookie("JWT");
+  const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
 
   const data = await response.json();

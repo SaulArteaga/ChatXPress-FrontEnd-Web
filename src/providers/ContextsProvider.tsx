@@ -15,6 +15,12 @@ type ContextProviderProps = {
   children: JSX.Element | JSX.Element[];
 };
 
+/**
+ * This context provider component is created to use all
+ * the contexts created in the app.
+ * @param props
+ * @returns Context layer
+ */
 export function ContextsProvider(props: ContextProviderProps) {
   const { children } = props;
 
