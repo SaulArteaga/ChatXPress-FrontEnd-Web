@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import style from "./Home.module.css";
 import OptionContainer from "../../components/optionContainer/OptionContainer";
 import UserInfoContainer from "../../components/userInfoContainer/UserInfoContainer";
 import UserDataContainer from "../../components/userDataContainer/UserDataContainer";
 import LogoutButtonComponent from "../../components/userDropdownContainer/LogoutButton";
-import { getUsers } from "../../services/users.services";
-import { usersContext } from "../../contexts/usersContext";
+// import { getUsers } from "../../services/users.services";
+// import { usersContext } from "../../contexts/usersContext";
 import UserModal from "../../components/userModal/UserModal";
 import { isVisibleContext } from "../../contexts/isVisibleContext";
 
@@ -14,17 +14,17 @@ import { isVisibleContext } from "../../contexts/isVisibleContext";
  * @returns The main page
  */
 function Home() {
-  const { setUsers } = React.useContext(usersContext);
+  // const { setUsers } = React.useContext(usersContext);
 
-  useEffect(() => {
-    async function retrieveUsers() {
-      const data = await getUsers();
-      setUsers(data);
-    }
-    setTimeout(() => {
-      retrieveUsers();
-    }, 500);
-  }, []);
+  // useEffect(() => {
+  //   async function retrieveUsers() {
+  //     const data = await getUsers();
+  //     setUsers(data);
+  //   }
+  //   setTimeout(() => {
+  //     retrieveUsers();
+  //   }, 2000);
+  // }, []);
 
   const { isVisible } = React.useContext(isVisibleContext);
 
