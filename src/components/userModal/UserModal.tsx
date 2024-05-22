@@ -37,11 +37,15 @@ function UserModal() {
     const confirmChoice = window.confirm("Do you want to modify the data?");
     if (confirmChoice) {
       if (userToChange.password.length < 6) {
+        window.alert(
+          "Password is too short. Password must have 6 or more characters"
+        );
+      } else {
+        await modifyUserByEmail(userModified, currentUser?.email!);
+        handleVisibleChange();
+        navigate(0);
+        navigate("/home");
       }
-      await modifyUserByEmail(userModified, currentUser?.email!);
-      handleVisibleChange();
-      navigate(0);
-      navigate("/home");
     } else {
       window.alert("You didn't want to change data, redirecting to main page");
       handleVisibleChange();

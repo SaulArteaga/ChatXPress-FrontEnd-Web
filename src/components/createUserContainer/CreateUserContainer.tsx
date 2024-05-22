@@ -11,22 +11,6 @@ import { useNavigate } from "react-router";
 function CreateUserContainer() {
   const navigate = useNavigate();
 
-  function isEmpty(value: any): boolean {
-    return (
-      value == null ||
-      value === false ||
-      value === 0 ||
-      isNaN(value) ||
-      value === "" ||
-      (Array.isArray(value) && value.length === 0) ||
-      (typeof value === "object" && Object.keys(value).length === 0)
-    );
-  }
-
-  function hasAnyEmptyProperty(obj: Record<string, any>): boolean {
-    return Object.values(obj).some(isEmpty);
-  }
-
   const initUser: IUsersRequest = {
     name: "",
     department: "",
@@ -44,16 +28,34 @@ function CreateUserContainer() {
     });
   };
 
+  const checkValuesInForm = (): boolean => {
+    let option =
+      initUser.name === userCreated.name ||
+      initUser.lastname === userCreated.lastname ||
+      initUser.email === userCreated.email ||
+      initUser.department === userCreated.department ||
+      initUser.password === userCreated.password;
+    if (option) {
+      return false;
+    }
+    return true;
+  };
+
   const createUserHandler = async () => {
     const confirmChoice = window.confirm("Do you want to create the user?");
-    if (hasAnyEmptyProperty(userCreated)) {
-      window.alert("Canceling operation");
-      setUserCreated(initUser);
-    }
-    if (confirmChoice) {
+    console.log(checkValuesInForm());
+    if (!checkValuesInForm()) {
+      window.alert("Canceling operation. There are empty values on the form.");
+    } else if (userCreated.password.length < 6) {
+      window.alert("Password must have more than 6 characters");
+    } else if (confirmChoice) {
       await createUser(userCreated);
       navigate("/home");
     }
+  };
+
+  const handleCancelCreate = async () => {
+    setUserCreated(initUser);
   };
 
   return (
@@ -104,8 +106,8 @@ function CreateUserContainer() {
               ></input>
               <input
                 className={style.inputData}
+                id="password"
                 name="password"
-                type="password"
                 value={userCreated.password}
                 onChange={handleInputChange}
               ></input>
@@ -115,7 +117,7 @@ function CreateUserContainer() {
             <button className={style.createButton} onClick={createUserHandler}>
               Create
             </button>
-            <button className={style.cancelButton} onClick={createUserHandler}>
+            <button className={style.cancelButton} onClick={handleCancelCreate}>
               Cancel
             </button>
           </div>
