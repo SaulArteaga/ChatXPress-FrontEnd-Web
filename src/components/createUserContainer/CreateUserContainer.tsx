@@ -43,14 +43,21 @@ function CreateUserContainer() {
 
   const createUserHandler = async () => {
     const confirmChoice = window.confirm("Do you want to create the user?");
-    console.log(checkValuesInForm());
+
     if (!checkValuesInForm()) {
       window.alert("Canceling operation. There are empty values on the form.");
     } else if (userCreated.password.length < 6) {
       window.alert("Password must have more than 6 characters");
     } else if (confirmChoice) {
-      await createUser(userCreated);
-      navigate("/home");
+      const result = await createUser(userCreated);
+      if (result) {
+        navigate("/home");
+      } else {
+        window.alert(
+          "User was not created because it was already in the database."
+        );
+        setUserCreated(initUser);
+      }
     }
   };
 

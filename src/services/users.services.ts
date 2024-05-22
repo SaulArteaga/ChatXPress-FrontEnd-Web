@@ -111,7 +111,6 @@ export const deleteUserByEmail = async (email: string) => {
  * @returns A boolean depending if the status is correct
  */
 export const createUser = async (user: IUsersRequest) => {
-  console.log(user);
   const request: RequestInfo = `${API_SERVER.PATH}user`;
   const token = await getToken("JWT");
   const response = await fetch(request, createUserInitRequest(user, token!));
