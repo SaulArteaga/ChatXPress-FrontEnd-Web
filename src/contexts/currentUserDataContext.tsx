@@ -6,7 +6,7 @@ import { IUsersResponse } from "../interfaces/IUsersResponse";
  * user we are editing in the modify and delete user.
  */
 type currentUserDataType = {
-  currentUser: IUsersResponse | undefined;
+  currentUser: IUsersResponse;
   setCurrentUser: Function;
 };
 

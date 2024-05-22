@@ -30,7 +30,9 @@ export function ContextsProvider(props: ContextProviderProps) {
   const [users, setUsers] = useState<IUsersResponse[]>([]);
   const [isVisible, setIsVisible] = useState(false);
 
-  const [currentUser, setCurrentUser] = useState<IUsersResponse>();
+  const [currentUser, setCurrentUser] = useState<IUsersResponse>(
+    {} as IUsersResponse
+  );
 
   const setUser = (username: string) => setName(username);
   const setUserEmail = (email: string) => setEmail(email);

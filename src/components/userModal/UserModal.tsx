@@ -18,10 +18,10 @@ import { useNavigate } from "react-router-dom";
 function UserModal() {
   const { currentUser } = React.useContext(currentUserDataContext);
   const userToChange: IUsersRequest = {
-    name: currentUser?.name,
-    lastname: currentUser?.lastname,
-    email: currentUser?.email,
-    department: currentUser?.department,
+    name: currentUser.name,
+    lastname: currentUser.lastname,
+    email: currentUser.email,
+    department: currentUser.department,
     password: "",
   };
   const { isVisible, setIsVisible } = React.useContext(isVisibleContext);
@@ -36,6 +36,8 @@ function UserModal() {
   const handleUpdateUser = async () => {
     const confirmChoice = window.confirm("Do you want to modify the data?");
     if (confirmChoice) {
+      if (userToChange.password.length < 6) {
+      }
       await modifyUserByEmail(userModified, currentUser?.email!);
       handleVisibleChange();
       navigate(0);
@@ -48,7 +50,7 @@ function UserModal() {
   };
 
   const handleDeleteUser = async () => {
-    const confirmChoice = window.confirm("Do you want to modify the data?");
+    const confirmChoice = window.confirm("Do you want to delete the data?");
     if (confirmChoice) {
       await deleteUserByEmail(currentUser?.email!);
       handleVisibleChange();
@@ -124,6 +126,7 @@ function UserModal() {
             <input
               id="password"
               name="password"
+              type="password"
               className={styles.inputData}
               onChange={handleInputChange}
             ></input>
