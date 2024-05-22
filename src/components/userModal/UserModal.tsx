@@ -34,16 +34,28 @@ function UserModal() {
   };
 
   const handleUpdateUser = async () => {
-    const update = await modifyUserByEmail(userModified, currentUser?.email!);
-    if (update) {
+    const confirmChoice = window.confirm("Do you want to modify the data?");
+    if (confirmChoice) {
+      await modifyUserByEmail(userModified, currentUser?.email!);
+      handleVisibleChange();
+      navigate(0);
+      navigate("/home");
+    } else {
+      window.alert("You didn't want to change data, redirecting to main page");
       handleVisibleChange();
       navigate("/home");
     }
   };
 
   const handleDeleteUser = async () => {
-    const deleteUser = await deleteUserByEmail(currentUser?.email!);
-    if (deleteUser) {
+    const confirmChoice = window.confirm("Do you want to modify the data?");
+    if (confirmChoice) {
+      await deleteUserByEmail(currentUser?.email!);
+      handleVisibleChange();
+      navigate(0);
+      navigate("/home");
+    } else {
+      window.alert("Redirecting to main page");
       handleVisibleChange();
       navigate("/home");
     }
