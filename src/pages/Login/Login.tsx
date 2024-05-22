@@ -56,14 +56,14 @@ function Login() {
       const data = await loginUser(user);
 
       if (data != null) {
-        window.alert("Hola tonoto");
+        window.alert("Welcome");
         setuser(initUser);
         userData.userIsLogged();
         userData.setUser(data.username);
         userData.setUserEmail(data.email);
         navigate("/home");
       } else {
-        window.alert("Usuario incorrecto");
+        window.alert("Incorrect user");
       }
     };
     fetchData();
@@ -72,7 +72,7 @@ function Login() {
   return (
     <div className={style.mainContainer}>
       <div>
-        <h1>Welcome!!</h1>
+        <h1 className={style.h1Style}>Welcome!!</h1>
         <h3>Introduce your account</h3>
         <div className={style.inputs}>
           <input

@@ -1,7 +1,7 @@
 /* 
 Style for the "Welcome!!" text
 */
-h1 {
+.h1Style {
   font-size: 80px;
   color: black;
   margin-bottom: 10px;
