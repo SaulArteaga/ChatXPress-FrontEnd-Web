@@ -10,7 +10,7 @@ import {
 } from "./request.service";
 import { getToken } from "./storeData.service";
 
-const PATH = "http://localhost:3000/api/v1/";
+const PATH = "http://localhost:3002/api/v1/";
 
 /**
  * This function retrieves all users from the database with the token.

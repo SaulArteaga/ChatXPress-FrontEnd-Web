@@ -3,7 +3,7 @@ import { IUserLoginResponse } from "../interfaces/IUserLoginResponse";
 import { postInitRequest } from "./request.service";
 import { storeToken } from "./storeData.service";
 
-const LOGIN_PATH = "http://localhost:3000/api/v1/user/login";
+const LOGIN_PATH = "http://localhost:3002/api/v1/user/login";
 
 /**
  * This function checks if the user is an admin in the database,

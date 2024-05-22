@@ -3,7 +3,7 @@ import { ITotalMessagesResponse } from "../interfaces/ITotalMessagesResponse";
 import { getInitRequest } from "./request.service";
 import { getToken } from "./storeData.service";
 
-const PATH = "http://localhost:3000/api/v1/";
+const PATH = "http://localhost:3002/api/v1/";
 
 /**
  * This function gets a count of all the chats active in the app
