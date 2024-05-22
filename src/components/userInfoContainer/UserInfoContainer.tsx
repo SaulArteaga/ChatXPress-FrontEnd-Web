@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./UserInfoContainer.module.css";
-import { LiaUserPlusSolid } from "react-icons/lia";
+import { PiChatsCircleFill } from "react-icons/pi";
 import { FaCommentDots } from "react-icons/fa6";
 import { FaUser, FaUserCheck } from "react-icons/fa";
 import { getActiveUsers, getTotalUsers } from "../../services/users.services";
@@ -69,7 +69,7 @@ function UserInfoContainer() {
               </h4>
             </div>
             <div>
-              <LiaUserPlusSolid size={90} />
+              <FaUserCheck size={90} style={{ color: "white" }} />
             </div>
           </div>
         </div>
@@ -106,7 +106,10 @@ function UserInfoContainer() {
               </h4>
             </div>
             <div>
-              <FaUserCheck size={90} style={{ color: "white" }} />
+              <PiChatsCircleFill
+                size={100}
+                style={{ marginLeft: "-0.5vw", color: "white" }}
+              />
             </div>
           </div>
         </div>
