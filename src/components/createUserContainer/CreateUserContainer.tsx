@@ -11,6 +11,22 @@ import { useNavigate } from "react-router";
 function CreateUserContainer() {
   const navigate = useNavigate();
 
+  function isEmpty(value: any): boolean {
+    return (
+      value == null ||
+      value === false ||
+      value === 0 ||
+      isNaN(value) ||
+      value === "" ||
+      (Array.isArray(value) && value.length === 0) ||
+      (typeof value === "object" && Object.keys(value).length === 0)
+    );
+  }
+
+  function hasAnyEmptyProperty(obj: Record<string, any>): boolean {
+    return Object.values(obj).some(isEmpty);
+  }
+
   const initUser: IUsersRequest = {
     name: "",
     department: "",
@@ -19,10 +35,10 @@ function CreateUserContainer() {
     lastname: "",
   };
 
-  const [userCreated, setUserModified] = useState<IUsersRequest>(initUser);
+  const [userCreated, setUserCreated] = useState<IUsersRequest>(initUser);
 
   const handleInputChange = (e: any) => {
-    setUserModified({
+    setUserCreated({
       ...userCreated,
       [e.target.name]: e.target.value,
     });
@@ -30,13 +46,13 @@ function CreateUserContainer() {
 
   const createUserHandler = async () => {
     const confirmChoice = window.confirm("Do you want to create the user?");
-    console.log(userCreated);
+    if (hasAnyEmptyProperty(userCreated)) {
+      window.alert("Canceling operation");
+      setUserCreated(initUser);
+    }
     if (confirmChoice) {
       await createUser(userCreated);
       navigate("/home");
-    } else {
-      window.alert("Canceling operation");
-      setUserModified(initUser);
     }
   };
 
@@ -98,6 +114,9 @@ function CreateUserContainer() {
           <div className={style.buttonsModal}>
             <button className={style.createButton} onClick={createUserHandler}>
               Create
+            </button>
+            <button className={style.cancelButton} onClick={createUserHandler}>
+              Cancel
             </button>
           </div>
         </div>
