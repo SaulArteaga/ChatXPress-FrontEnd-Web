@@ -3,7 +3,6 @@
  * (later we will change it to the database data).
  */
 
-export const adminUser = {
-  name: "admin",
-  password: "undostres",
+export const API_SERVER = {
+  PATH: "http://localhost:3002/api/v1/",
 };

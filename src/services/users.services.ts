@@ -1,3 +1,4 @@
+import { API_SERVER } from "../data/data";
 import { ITotalActiveUsersResponse } from "../interfaces/ITotalActiveUsersResponse";
 import { ITotalUsersResponse } from "../interfaces/ITotalUsersResponse";
 import { IUsersRequest } from "../interfaces/IUsersRequest";
@@ -10,14 +11,12 @@ import {
 } from "./request.service";
 import { getToken } from "./storeData.service";
 
-const PATH = "http://localhost:3002/api/v1/";
-
 /**
  * This function retrieves all users from the database with the token.
  * @returns An array of IUsersResponse
  */
 export const getUsers = async (): Promise<IUsersResponse[]> => {
-  const request: RequestInfo = `${PATH}users`;
+  const request: RequestInfo = `${API_SERVER.PATH}users`;
   const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
 
@@ -58,7 +57,7 @@ export const getUsers = async (): Promise<IUsersResponse[]> => {
  * @returns An array of IUsersResponse with one user
  */
 export const getUserByEmail = async (email: string) => {
-  const request: RequestInfo = `${PATH}user/${email}`;
+  const request: RequestInfo = `${API_SERVER.PATH}user/${email}`;
   const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
   const data = await response.json();
@@ -88,7 +87,7 @@ export const getUserByEmail = async (email: string) => {
  * @returns A boolean depending if the status is correct
  */
 export const modifyUserByEmail = async (user: IUsersRequest, email: string) => {
-  const request: RequestInfo = `${PATH}user/${email}`;
+  const request: RequestInfo = `${API_SERVER.PATH}user/${email}`;
   const token = await getToken("JWT");
   const response = await fetch(request, putInitRequest(user, token!));
   return response.status === 200;
@@ -100,7 +99,7 @@ export const modifyUserByEmail = async (user: IUsersRequest, email: string) => {
  * @returns A boolean depending if the status is correct
  */
 export const deleteUserByEmail = async (email: string) => {
-  const request: RequestInfo = `${PATH}user/${email}`;
+  const request: RequestInfo = `${API_SERVER.PATH}user/${email}`;
   const token = await getToken("JWT");
   const response = await fetch(request, deleteInitRequest(token!));
   return response.status === 200;
@@ -113,7 +112,7 @@ export const deleteUserByEmail = async (email: string) => {
  */
 export const createUser = async (user: IUsersRequest) => {
   console.log(user);
-  const request: RequestInfo = `${PATH}user`;
+  const request: RequestInfo = `${API_SERVER.PATH}user`;
   const token = await getToken("JWT");
   const response = await fetch(request, createUserInitRequest(user, token!));
   return response.status === 200;
@@ -124,7 +123,7 @@ export const createUser = async (user: IUsersRequest) => {
  * @returns An object with the count of all the active users.
  */
 export const getActiveUsers = async (): Promise<ITotalActiveUsersResponse> => {
-  const request: RequestInfo = `${PATH}users/active`;
+  const request: RequestInfo = `${API_SERVER.PATH}users/active`;
   const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
 
@@ -140,7 +139,7 @@ export const getActiveUsers = async (): Promise<ITotalActiveUsersResponse> => {
  * @returns An object with the count of all users.
  */
 export const getTotalUsers = async (): Promise<ITotalUsersResponse> => {
-  const request: RequestInfo = `${PATH}users/total`;
+  const request: RequestInfo = `${API_SERVER.PATH}users/total`;
   const token = await getToken("JWT");
   const response = await fetch(request, getInitRequest(token!));
 
