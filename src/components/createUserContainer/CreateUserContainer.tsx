@@ -89,6 +89,7 @@ function CreateUserContainer() {
               <input
                 className={style.inputData}
                 name="password"
+                type="password"
                 value={userCreated.password}
                 onChange={handleInputChange}
               ></input>
