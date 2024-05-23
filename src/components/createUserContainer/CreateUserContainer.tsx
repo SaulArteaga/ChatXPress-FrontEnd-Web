@@ -115,6 +115,7 @@ function CreateUserContainer() {
                 className={style.inputData}
                 id="password"
                 name="password"
+                type="password"
                 value={userCreated.password}
                 onChange={handleInputChange}
               ></input>
