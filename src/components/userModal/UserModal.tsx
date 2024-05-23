@@ -36,7 +36,7 @@ function UserModal() {
   const handleUpdateUser = async () => {
     const confirmChoice = window.confirm("Do you want to modify the data?");
     if (confirmChoice) {
-      if (userToChange.password.length < 6) {
+      if (userModified.password.length < 6) {
         window.alert(
           "Password is too short. Password must have 6 or more characters"
         );
