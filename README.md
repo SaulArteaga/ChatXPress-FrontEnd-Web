@@ -1,32 +1,32 @@
 # ChatXPress Frontend Web
 
-En este repositorio se encuentra ubicado la parte web de la aplicación que llamamos ChatXPress. Este proyecto se se compone por tres proyectos fundamentales, en el que nos ubicamos, que sería el Frontend Web, el Backend y el Frontend Movil.
+In this repository is placed the web app that we call ChatXPress. This project is composed by other three fundamental projects, the one that we are in, the Frontend of the Web, the Backend and the mobile Frontend.
 
-El proyecto en el que nos encontramos es una aplicación de administración de usuarios con una dependencia del backend.
+The project that we are in is an user management application with a dependency on the backend.
 
-Los links a los otrs repositorios son los siguientes:
+The links to other repositories are:
 
-- [Frontend Movil](https://github.com/AmandaRaveloCabrera/ChatXPress-frontend.git)
+- [Mobile Frontend](https://github.com/AmandaRaveloCabrera/ChatXPress-frontend.git)
 - [Backend](https://github.com/SaulArteaga/ChatXPress-Backend.git)
 
-## Instalación de librerías
+## Library instalation
 
-Para el siguiente paso se tendrá que tener instalado node. Más información en [este link](https://nodejs.org/en/download).
+For the following step is required to have installed node. More information in [this link](https://nodejs.org/en/download).
 
-Para poder ejecutar nuestra aplicación tendremos que primeramente entrar en modo consola a nuestra carpeta de proyecto.
+The first step to execute the app is to be in console mode in the root folder of the project, because we need to execute some commands first.
 
-Dentro de la carpeta de proyecto ejecutaremos el siguiente comando para poder instalar las librerías necesarias:
+In the project root folder we execute the following command to install the required libraries:
 
 ```shell
 npm i
 ```
 
-## Iniciar la aplicación
+## Execute the application
 
-Para iniciar la aplicación ejecutaremos el siguiente comando:
+To execute the application we need to execute the next command:
 
 ```shell
 npm start
 ```
 
-Con este comando se ejecutará la app y se abrirá automáticamente una ventana de firefox.
+With this command we will execute the application and it will open automatically in the dault browser on a new tab.
