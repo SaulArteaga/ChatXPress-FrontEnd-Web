@@ -10,29 +10,6 @@
 }
 
 /*
-      This defines an animation for the buttons
-    */
-button:hover {
-  border: 2px solid white;
-}
-
-/*
-      Defines a fine line on the options container
-    */
-hr {
-  margin-top: 10px;
-  color: white;
-}
-
-/*
-      Defines the style of the h2 inside of the options container
-    */
-h2 {
-  font-family: serif;
-  font-weight: 400;
-}
-
-/*
       Defines the flow of the containers containing the four displays 
       of data of the user and a table with data of the users. 
     */

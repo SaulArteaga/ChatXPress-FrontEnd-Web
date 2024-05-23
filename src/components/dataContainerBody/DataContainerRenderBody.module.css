@@ -14,7 +14,8 @@ td {
   font-family: serif;
   font-weight: 400;
   width: 70vw;
-  max-height: 320px;
+  height: 310px;
+  max-height: 310px;
   overflow-y: scroll;
 }
 
