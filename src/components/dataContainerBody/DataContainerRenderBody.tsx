@@ -6,6 +6,7 @@ import { currentUserDataContext } from "../../contexts/currentUserDataContext";
 import { FaRegEdit } from "react-icons/fa";
 import Loader from "../loader/Loader";
 import { getUsers } from "../../services/users.services";
+import style from "./DataContainerRenderBody.module.css";
 
 /**
  * This fucntion returns the data of the users straight
@@ -60,17 +61,21 @@ function DataContainerRenderBody() {
       {loading ? (
         <Loader />
       ) : (
-        <table>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>ID</th>
-            <th>Department</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
-          {renderBody()}
-        </table>
+        <div className={style.tableStyle}>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th></th>
+              </tr>
+            </thead>
+            {renderBody()}
+          </table>
+        </div>
       )}
       {/* {renderBody()} */}
     </>

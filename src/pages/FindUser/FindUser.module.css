@@ -60,36 +60,6 @@ h2 {
 }
 
 /******************************************
-        Defines how the table is seen 
-  *******************************************/
-table {
-  border-collapse: collapse;
-  font-family: serif;
-  font-weight: 400;
-  width: 70vw;
-  margin-left: 40px;
-}
-th {
-  border-bottom: 2px solid white;
-  padding: 2px 100px 10px 10px;
-  text-align: left;
-}
-td {
-  padding: 2px 100px 10px 10px;
-}
-
-th:first-child {
-  border-right: 2px solid white;
-  padding: 2px 20px 10px 10px;
-}
-
-td:first-child {
-  padding: 2px 20px 10px 10px;
-  border: none;
-  border-right: 2px solid white;
-}
-
-/******************************************
     Defines the four info displays styles
   *******************************************/
 .userInfoContainer {

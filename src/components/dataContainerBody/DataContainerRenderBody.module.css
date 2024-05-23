@@ -1,9 +1,5 @@
 table {
   border-collapse: collapse;
-  font-family: serif;
-  font-weight: 400;
-  width: 70vw;
-  margin-left: 40px;
 }
 th {
   border-bottom: 2px solid white;
@@ -12,6 +8,14 @@ th {
 }
 td {
   padding: 2px 100px 10px 10px;
+}
+
+.tableStyle {
+  font-family: serif;
+  font-weight: 400;
+  width: 70vw;
+  max-height: 320px;
+  overflow-y: scroll;
 }
 
 th:first-child {
